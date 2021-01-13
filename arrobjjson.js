@@ -56,7 +56,7 @@ var objTryOut = [
   }
 ]
 
-console.log(objTryOut[0].choices[0]);
+//console.log(objTryOut[0].choices[0]);
 // console.log(objTryOut.forEach(function(elem){
 //   console.log(elem);
 // }));
@@ -65,29 +65,37 @@ var indexnum = 0;
 var GAMEOVER = false;
 var cho = $("#choice");
 var quest = $("#quest");
+//need to get each li out of the list 
+var choice1 = $("#choice ul li:first");
 
+//this runs first 
 function init(){ 
   funUpdateQuestions();
 }
-//go thru array and populate the li woith the choices
+
+//go thru array and populate the li with the choices
 function funUpdateQuestions(){
   //get the choices out of the array and stick them in the li 
   var q = objTryOut[indexnum];
-  console.log(q);
+  //make the p tag in html = the question
   quest.text(q.question);
+  
+  //make a variable for the text of teh 1st list item
+  $("#choice li:first").text(objTryOut[indexnum].choices[0]);
+  $("#choice li:nth-child(2)").text(objTryOut[indexnum].choices[1]);
+  $("#choice li:nth-child(3)").text(objTryOut[indexnum].choices[2]);
 
-  console.log(cho);
+ 
   cho.children().each(function(i, elem){
-    console.log(i, elem);
     var $elem = $(elem);//wraps vanilla javascrip node in DOM in a jquery object
+    console.log(i);
+    console.log($elem);
   });
 }
 
-
-
+// li:nth-child(3)
 var button = $("#but");
 button.on("click", function(){
-  console.log(objTryOut[indexnum]);
   indexnum++;
   if (indexnum >= objTryOut.length){
     GAMEOVER === true;
@@ -99,7 +107,7 @@ button.on("click", function(){
   
 })
 
-init();
+init();//just run init and let it happen
 
 
 
