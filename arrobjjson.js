@@ -65,8 +65,11 @@ var indexnum = 0;
 var GAMEOVER = false;
 var cho = $("#choice");
 var quest = $("#quest");
-//need to get each li out of the list 
-var choice1 = $("#choice ul li:first");
+
+//maybe create a ref to each list item and screw cho?
+var li1 = $("#choice li:first");
+var li2 = $("#choice li:nth-child(2)");
+var li3 = $("#choice li:nth-child(3)");
 
 //this runs first 
 function init(){ 
@@ -80,18 +83,44 @@ function funUpdateQuestions(){
   //make the p tag in html = the question
   quest.text(q.question);
   
-  //make a variable for the text of teh 1st list item
-  $("#choice li:first").text(objTryOut[indexnum].choices[0]);
-  $("#choice li:nth-child(2)").text(objTryOut[indexnum].choices[1]);
-  $("#choice li:nth-child(3)").text(objTryOut[indexnum].choices[2]);
+  //make a variable for the text of the 1st list item
+  li1.text(objTryOut[indexnum].choices[0]);
+  li2.text(objTryOut[indexnum].choices[1]);
+  li3.text(objTryOut[indexnum].choices[2]);
 
- 
-  cho.children().each(function(i, elem){
-    var $elem = $(elem);//wraps vanilla javascrip node in DOM in a jquery object
-    console.log(i);
-    console.log($elem);
-  });
+  //need to figure out the clicking on a li object event and make it log the score etc.
+
+  //loops through the list need to figure this out 
+  // cho.children().each(function(i, elem){
+  //   var $elem = $(elem);//wraps vanilla javascrip node in DOM in a jquery object
+  //   console.log(i);
+  //   console.log($elem);
+  // });
 }
+
+li1.on("click", function(){
+  var str1 = li1.text();
+  if (str1 === objTryOut[indexnum].answer){
+    alert("WON")
+  }
+  else alert("lost");
+})
+
+li2.on("click", function(){
+  var str2 = li2.text();
+  if (str2 === objTryOut[indexnum].answer){
+    alert("WON")
+  }
+  else alert("lost");
+})
+
+li3.on("click", function(){
+  var str3 = li3.text();
+  if (str3 === objTryOut[indexnum].answer){
+    alert("WON")
+  }
+  else alert("lost");
+})
 
 // li:nth-child(3)
 var button = $("#but");
