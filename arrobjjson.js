@@ -46,12 +46,12 @@ var objTryOut = [
   },
   {
     question: "What syntax is x = 5; y = 6;",
-    choices: ["Declare Variables", "Assign Values", "Compute Values"],
+    choices: ["Compute Values", "Declare Variables", "Assign Values"],
     answer: "Assign Values",
   },
   {
     question: "What syntax is z = x + y",
-    choices: ["Declare Variables", "Assign Values", "Compute Values"],
+    choices: ["Assign Values", "Compute Values", "Declare Variables"],
     answer: "Compute Values",
   }
 ]
@@ -122,7 +122,6 @@ li3.on("click", function(){
   else alert("lost");
 })
 
-// li:nth-child(3)
 var button = $("#but");
 button.on("click", function(){
   indexnum++;
