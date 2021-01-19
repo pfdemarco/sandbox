@@ -37,7 +37,7 @@ div.form-group{
 /*form-grouptime is the container for description class so if we want teh form-grouptime to 
 take up 50% of the page then we want task9 to take up 99% of teh container its in which is grouptime so its with should be 99%*/
 div.form-grouptime{
-  width:50%;
+  width:90%;
 }
 .description{
   white-space: pre-wrap;
